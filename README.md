@@ -4,7 +4,9 @@
 * A browser and mobile app that allows users to see street art on a map (either located around them or in an area they input). 
 
 ### WIREFRAMES
+#### WEB
 ![Web](https://i.imgur.com/OdYBCuy.jpg)
+#### MOBILE
 ![Mobile](https://i.imgur.com/TsgqRvW.jpg)
 
 ### USERSTORIES
