@@ -1,7 +1,8 @@
 import Menu from './components/Menu';
-import Page from './pages/Page';
+import StreetArtMap from './streetart/StreetArtMap'
+import Home from './home'
 import React from 'react';
-import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonSplitPane, IonHeader } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 
@@ -31,9 +32,10 @@ const App: React.FC = () => {
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+          <IonRouterOutlet>
+            <Redirect from="/" to="/home" exact />
+            <Route path="/home" component={Home} exact />
+            <Route path="/map" component={StreetArtMap} exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

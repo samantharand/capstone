@@ -5,10 +5,10 @@ interface ContainerProps {
   name: string;
 }
 
-const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
+const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
     <div className="container">
-      <strong>{name}</strong>
+      <strong>Map :)</strong>
       <p>EDIT PAGE STUFF HERE</p>
     </div>
   );

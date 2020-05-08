@@ -12,7 +12,7 @@ import {
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp, homeSharp, homeOutline } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -24,14 +24,14 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Home',
+    url: 'home',
+    iosIcon: homeOutline,
+    mdIcon: homeSharp
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
+    title: 'Users',
+    url: '/map',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
@@ -70,8 +70,8 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>APP NAME</IonListHeader>
+          <IonNote>tagline baybeeee</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
