@@ -1,9 +1,9 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { useParams } from 'react-router';
-import StreetArtMapContainter from '../components/StreetArtMapContainter';
+import LoginContainer from '../components/LoginContainer';
 
-const User: React.FC = () => {
+const Login: React.FC = () => {
 
   return (
     <IonPage>
@@ -12,20 +12,20 @@ const User: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>MAAAAP</IonTitle>
+          <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Map</IonTitle>
+            <IonTitle size="large">Login</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <StreetArtMapContainter name='StreetArtMapContainter' />
+        <LoginContainer name='LoginContainer' />
       </IonContent>
     </IonPage>
   );
 };
 
-export default User;
+export default Login;

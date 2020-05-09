@@ -8,8 +8,12 @@ interface ContainerProps {
 const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
     <div className="container">
-      <strong>Map :)</strong>
-      <p>EDIT PAGE STUFF HERE</p>
+	    <strong>Map :)</strong>
+	    <p>map  </p>
+
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7G8yZAkGYtf2QQzkS1n0E1gZtpPF_h8w=initMap">
+		</script>
     </div>
   );
 };

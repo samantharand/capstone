@@ -2,6 +2,8 @@ import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, Io
 import React from 'react';
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/UserExploreContainer';
+import './ExploreContainer.css';
+
 
 const User: React.FC = () => {
 

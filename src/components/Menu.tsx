@@ -12,7 +12,7 @@ import {
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp, homeSharp, homeOutline } from 'ionicons/icons';
+import { mapOutline, mapSharp, bookmarkOutline, heartOutline, heartSharp, paperPlaneOutline, paperPlaneSharp, homeSharp, homeOutline } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -25,43 +25,50 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: 'Home',
-    url: 'home',
+    url: '/home',
     iosIcon: homeOutline,
-    mdIcon: homeSharp
+    mdIcon: mapSharp
   },
   {
-    title: 'Users',
+    title: 'Map',
     url: '/map',
-    iosIcon: paperPlaneOutline,
+    iosIcon: mapOutline,
     mdIcon: paperPlaneSharp
   },
-  {
-    title: 'Favorites',
-    url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
-  },
-  {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
-  },
-  {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
-  }
+  // {
+  //   title: 'Favorites',
+  //   url: '/page/Favorites',
+  //   iosIcon: heartOutline,
+  //   mdIcon: heartSharp
+  // }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+// const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+// <IonList id="labels-list">
+//           <IonListHeader>Labels</IonListHeader>
+//           {labels.map((label, index) => (
+//             <IonItem lines="none" key={index}>
+//               <IonIcon slot="start" icon={bookmarkOutline} />
+//               <IonLabel>{label}</IonLabel>
+//             </IonItem>
+//           ))}
+// </IonList>
+
+const authPages: AppPage[] = [
+  {
+    title: 'Login',
+    url: '/login',
+    iosIcon: homeOutline,
+    mdIcon: mapSharp
+  },
+  {
+    title: 'Register',
+    url: '/register',
+    iosIcon: mapOutline,
+    mdIcon: paperPlaneSharp
+  }
+];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -84,14 +91,19 @@ const Menu: React.FC = () => {
           })}
         </IonList>
 
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
+        
+
+        <IonList id="auth-list">
+          {authPages.map((appPage, index) => {
+            return (
+              <IonMenuToggle key={index} autoHide={false}>
+                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                  <IonIcon slot="start" icon={appPage.iosIcon} />
+                  <IonLabel>{appPage.title}</IonLabel>
+                </IonItem>
+              </IonMenuToggle>
+            );
+          })}
         </IonList>
       </IonContent>
     </IonMenu>

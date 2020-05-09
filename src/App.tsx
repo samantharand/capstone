@@ -1,7 +1,9 @@
 import Menu from './components/Menu';
 import StreetArtMap from './streetart/StreetArtMap'
 import Home from './home'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Login from './loginregister/Login'
+import Register from './loginregister/Register'
 import { IonApp, IonRouterOutlet, IonSplitPane, IonHeader } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
@@ -27,6 +29,12 @@ import './theme/variables.css';
 
 const App: React.FC = () => {
 
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [currentUser, setCurrentUser] = useState('')
+
+
+
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -36,6 +44,8 @@ const App: React.FC = () => {
             <Redirect from="/" to="/home" exact />
             <Route path="/home" component={Home} exact />
             <Route path="/map" component={StreetArtMap} exact />
+            <Route path="/login" component={Login} exact />
+            <Route path="/register" component={Register} exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
